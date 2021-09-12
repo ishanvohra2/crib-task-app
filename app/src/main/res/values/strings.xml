@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Crib Task App</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="enter_number_of_days">Enter number of days</string>
+    <string name="no_message_text">Sorry, no messages found.</string>
+    <string name="search">Search…</string>
+    <string name="message_found_text">%1$d number of messages found.</string>
+</resources>
