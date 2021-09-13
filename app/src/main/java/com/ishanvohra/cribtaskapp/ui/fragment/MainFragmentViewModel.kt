@@ -21,10 +21,10 @@ class MainFragmentViewModel() : ViewModel() {
 
     private val TAG = javaClass.simpleName
 
-    suspend fun readMessages() : LiveData<MutableList<SMS>>{
+    fun readMessages() : LiveData<MutableList<SMS>>{
         val mutableLiveData = MutableLiveData<MutableList<SMS>>()
 
-        withContext(Dispatchers.Default) {
+        viewModelScope.launch(Dispatchers.IO) {
             val list: ArrayList<SMS> = ArrayList()
             val uriSMSURI: Uri = Uri.parse("content://sms/inbox")
             val cur: Cursor? = context!!.contentResolver.query(uriSMSURI, null, null, null, null)
